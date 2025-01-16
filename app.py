@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ChatOpenAI Templates
-system_template = """You are a helpful assistant who always speaks in a pleasant tone!
+system_template = """You are a helpful assistant who always speaks in a pirate tone!
 """
 
 user_template = """{input}
@@ -22,8 +22,8 @@ Think through your response step by step.
 @cl.on_chat_start  # marks a function that will be executed at the start of a user session
 async def start_chat():
     settings = {
-        "model": "gpt-3.5-turbo",
-        "temperature": 0,
+        "model": "gpt-4o",
+        "temperature": 0.8,  # setting the temperature to 0.8 to make the responses more diverse
         "max_tokens": 500,
         "top_p": 1,
         "frequency_penalty": 0,
